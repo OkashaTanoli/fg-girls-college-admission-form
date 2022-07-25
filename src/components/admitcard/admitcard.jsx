@@ -12,13 +12,16 @@ function Admitcard() {
     const [load, setLoad] = useState(true)
     let { id } = useParams();
 
-    let group = id > 0 && id <= 150 ? 'medical' : id > 150 && id <= 300 ? 'eng' : id > 300 && id <= 400 ? 'ics' : id > 400 && id <= 450 ? 'arts' : ''
+    let group = id > 0 && id <= 150 ? 'medical' : id > 150 && id <= 300 ? 'eng' : id > 300 && id <= 400 ? 'ics' : id > 400 && id <= 500 ? 'arts' : ''
+
     useEffect(() => {
-        onValue(ref(db, `fg_boys_inter_college/federal_board/${group}/students/${id}`), (snapshot) => {
+        onValue(ref(db, `fg_girls_inter_college/federal_board/${group}/students/${id}`), (snapshot) => {
             setData(snapshot.val())
             setLoad(false)
         }, { onlyOnce: true })
-    },[group,id])
+
+    }, [group, id])
+
     console.log(data)
     if (load) {
         return (
@@ -38,7 +41,7 @@ function Admitcard() {
         <>
             <PrintableAdmitcard data={data} />
             <div id='admit_card' className='admit_card'>
-                <h1>FG BOYS INTER COLLEGE KARACHI CANTT
+                <h1>FG GIRLS INTER COLLEGE KARACHI CANTT
                     REGISTRATION SLIP FOR ENTRY TEST
                 </h1>
                 <div className='photoDiv'>
@@ -59,6 +62,14 @@ function Admitcard() {
                         <p>Category :</p>
                         <p>{data.category}</p>
                     </div>
+                    <div className='userDataDiv userDataDivAdmitCard'>
+                        <p>Group :</p>
+                        <p>{data.group}</p>
+                    </div>
+                    <div className='userDataDiv userDataDivAdmitCard'>
+                        <p>Board :</p>
+                        <p>{data.sscBoard}</p>
+                    </div>
                 </div>
                 <div className='main_table_div'>
                     <div className='table_div table_div_admit_card'>
@@ -76,7 +87,7 @@ function Admitcard() {
                         </div>
                         <div>
                             <div>Test Center : </div>
-                            <div>FG BOYS INTER COLLEGE KARACHI CANTT</div>
+                            <div>FG GIRLS INTER COLLEGE KARACHI CANTT</div>
                         </div>
                     </div>
                     <div className='instructions instructionsAdmitCard'>

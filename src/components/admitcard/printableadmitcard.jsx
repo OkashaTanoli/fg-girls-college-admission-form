@@ -6,7 +6,7 @@ function PrintableAdmitcard({ data }) {
     return (
         <>
             <div className='printable_admit_card'>
-                <h1>FG BOYS INTER COLLEGE KARACHI CANTT
+                <h1>FG GIRLS INTER COLLEGE KARACHI CANTT
                     REGISTRATION SLIP FOR ENTRY TEST
                 </h1>
                 <div className='photoDiv'>
@@ -27,6 +27,14 @@ function PrintableAdmitcard({ data }) {
                         <p>Category :</p>
                         <p>{data.category} </p>
                     </div>
+                    <div className='userDataDiv'>
+                        <p>Group :</p>
+                        <p>{data.group}</p>
+                    </div>
+                    <div className='userDataDiv '>
+                        <p>Board :</p>
+                        <p>{data.sscBoard}</p>
+                    </div>
                 </div>
                 <div className='main_table_div'>
                     <div className='table_div'>
@@ -44,7 +52,7 @@ function PrintableAdmitcard({ data }) {
                         </div>
                         <div>
                             <div>Test Center : </div>
-                            <div>FG BOYS INTER COLLEGE KARACHI CANTT</div>
+                            <div>FG GIRLS INTER COLLEGE KARACHI CANTT</div>
                         </div>
                     </div>
                     <div className='instructions'>

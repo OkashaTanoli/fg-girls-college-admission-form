@@ -25,7 +25,7 @@
 }
 
 header {
-	background-color: black;
+	background-color: #798b01;
 	color: white;
 	margin: 0;
 	width: 100%;
@@ -36,6 +36,7 @@ h1 {
 	font-size: 30px;
 	padding: 30px;
 	margin: 0;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -64,7 +65,7 @@ form {
 	justify-content: center;
 	align-items: center;
 	width: 80%;
-	background: #73827a;
+	background: #5A5A5A;
 	border-radius: 5px;
 	margin-bottom: 50px;
 }
@@ -150,7 +151,7 @@ select {
 
 .not_submit {
 	filter: blur(2px);
-	background-color: rgb(122, 122, 122) !important;
+	background-color:rgb(122, 122, 122) !important;
 	border-radius: 12px;
 	border: 0;
 	box-sizing: border-box;

@@ -27,7 +27,7 @@ function Adminpanel() {
 
     useEffect(() => {
         setLoad(true)
-        onValue(ref(db, `fg_boys_inter_college/federal_board/${group}/students`), (snapshot) => {
+        onValue(ref(db, `fg_girls_inter_college/federal_board/${group}/students`), (snapshot) => {
             setData(snapshot.val() !== null ? Object.values(snapshot.val()) : null)
 
             setLoad(false)

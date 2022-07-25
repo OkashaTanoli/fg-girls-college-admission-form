@@ -32,7 +32,7 @@ function MainForm() {
     return (
         <div className='main_div'>
             <header>
-                <h1>FG BOYS INTER COLLEGE KARACHI CANTT</h1>
+                <h1>FG Girls Inter college karachi cantt</h1>
             </header>
 
             <h3>Online Registration Form For Admission ( Only For Federal Board 2022-2023 )</h3>
@@ -79,9 +79,10 @@ function MainForm() {
                 <label htmlFor="form_ssc_board">SSC/Matriculation Board<span className="asteric">*</span> </label>
                 <select name="form_ssc_passYear" value={sscBoard} onChange={(e) => { setSscBoard(e.target.value) }}>
                     <option value="0" defaultChecked>Select Board</option>
-                    <option value="fb">Federal Board</option>
+                    <option value="federal">Federal Board</option>
                     <option value="oLevel">O/A Levels</option>
                     <option value="agaKhan">Aga Khan Board</option>
+                    <option value="sindh">Sindh Board</option>
                 </select>
 
 
@@ -98,6 +99,7 @@ function MainForm() {
                 <select name="form_ssc_passYear" value={sscYear} onChange={(e) => { setSscYear(e.target.value) }}>
                     <option value="0" defaultChecked>Select Passing Year</option>
                     <option value="2022">2022</option>
+                    <option value="2021">2021</option>
                 </select>
 
 
@@ -139,7 +141,7 @@ function MainForm() {
 
                 <p className="thin">* These fields are required.</p>
             </form>
-            <div style={{ fontSize: "16px", textAlign: 'center', padding: '20px 0', backgroundColor: 'black', color: 'white', width: '100%' }}>
+            <div style={{ fontSize: "16px", textAlign: 'center', padding: '20px 0', backgroundColor: '#798b01', color: 'white', width: '100%' }}>
                 <p>Developed by <a href='https://okasha-tanoli-portfolio.surge.sh/' target="__blank">Okasha Aijaz</a></p>
                 <p>Designed by <a href='https://www.facebook.com/3shehzad3' target="__blank">Shehzad Iqbal</a></p>
             </div>
