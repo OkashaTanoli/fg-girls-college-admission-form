@@ -39,7 +39,7 @@ export const submitForm = (e, navigate, setLoad, obj) => {
             .then(() => {
                 setLoad(false)
                 let path = updated_serial_no;
-                // navigate(`admitcard/${path}`, { replace: true });
+                navigate(`admitcard/${path}`, { replace: true });
             })
 
     },
