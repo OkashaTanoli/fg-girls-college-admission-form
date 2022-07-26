@@ -13,6 +13,7 @@ function MainForm() {
     const [email, setEmail] = useState('')
     const [fathername, setFathername] = useState('')
     const [whatsapp, setWhatsapp] = useState('')
+    const [phonenumber, setPhonenumber] = useState('')
     const [DOB, setDOB] = useState('')
     const [category, setCategory] = useState('')
     const [sscBoard, setSscBoard] = useState('')
@@ -37,7 +38,7 @@ function MainForm() {
 
             <h3>Online Registration Form For Admission ( Only For Federal Board 2022-2023 )</h3>
 
-            <form onSubmit={(e) => submitForm(e, navigate, setLoad, { name, email, fathername, whatsapp, DOB, category, sscBoard, sscMarks, sscPercentage, sscYear, group, address })}>
+            <form onSubmit={(e) => submitForm(e, navigate, setLoad, { name, email, fathername, whatsapp,phonenumber, DOB, category, sscBoard, sscMarks, sscPercentage, sscYear, group, address })}>
                 <p className='note'>NOTE: Please fill all fields carefully</p>
                 {/* <!-- <div className="form-group"> --> */}
                 <label htmlFor="name">Name<span className="asteric">*</span></label>
@@ -49,8 +50,11 @@ function MainForm() {
                 <label htmlFor="fatherName">Father Name<span className="asteric">*</span></label>
                 <input type="text" id="fatherName" placeholder="Enter your Father Name" required value={fathername} onChange={(e) => { setFathername(e.target.value) }} />
 
-                <label htmlFor="phoneNumber">WhatsApp Number<span className="asteric">*</span></label>
-                <input type='number' id="phoneNumber" placeholder="Enter your Whatsapp Number" required value={whatsapp} onChange={(e) => { setWhatsapp(e.target.value) }} />
+                <label htmlFor="whatsappNumber">WhatsApp Number<span className="asteric">*</span></label>
+                <input type='number' id="whatsappNumber" placeholder="Enter your Whatsapp Number" required value={whatsapp} onChange={(e) => { setWhatsapp(e.target.value) }} />
+
+                <label htmlFor="phoneNumber">Phone Number<span className="asteric">*</span></label>
+                <input type='number' id="phoneNumber" placeholder="Enter your Phone Number" required value={phonenumber} onChange={(e) => { setPhonenumber(e.target.value) }} />
 
                 <label htmlFor="dob">Date of Birth<span className="asteric">*</span></label>
                 <input type="date" id="dob" required min="2005-01-01" max="2007-12-31" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value={DOB} onChange={(e) => { setDOB(e.target.value) }} />
@@ -99,7 +103,6 @@ function MainForm() {
                 <select name="form_ssc_passYear" value={sscYear} onChange={(e) => { setSscYear(e.target.value) }}>
                     <option value="0" defaultChecked>Select Passing Year</option>
                     <option value="2022">2022</option>
-                    <option value="2021">2021</option>
                 </select>
 
 
@@ -130,7 +133,7 @@ function MainForm() {
                 {
                     category !== '' && category !== '0' && sscBoard !== '' && sscBoard !== '0' && sscYear !== '' &&
                         sscYear !== '0' && group !== '' && group !== '0' && name !== '' && email !== '' &&
-                        fathername !== '' && whatsapp !== '' && DOB !== '' && sscMarks !== '' && sscPercentage !== '' &&
+                        fathername !== '' && whatsapp !== '' && phonenumber !== '' && DOB !== '' && sscMarks !== '' && sscPercentage !== '' &&
                         address !== '' ?
                         <div className="mainDiv"><button type="submit" className="submit secondBTN" >{load ? <div className='loader3_div'><div class="loader3"></div></div> : "SUBMIT"}</button></div>
                         :

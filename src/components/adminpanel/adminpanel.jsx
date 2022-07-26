@@ -80,6 +80,7 @@ function Adminpanel() {
                 sscYear: val.sscYear,
                 dateOfBirth: val.DOB,
                 whatsapp: val.whatsapp,
+                phonenumber:val.phonenumber,
                 address: val.address
             }
         })
@@ -98,6 +99,7 @@ function Adminpanel() {
         { label: 'SSC Year', key: 'sscYear' },
         { label: 'Date Of Birth', key: 'dateOfBirth' },
         { label: 'WhatsApp', key: 'whatsapp' },
+        { label: 'Phone Number', key: 'phonenumber' },
         { label: 'Address', key: 'address' },
     ];
     return (
@@ -144,6 +146,7 @@ function Adminpanel() {
                                         <Datafields property='Father Name' val={val.fathername} />
                                         <Datafields property='Email' val={val.email} />
                                         <Datafields property='Whatsapp' val={val.whatsapp} />
+                                        <Datafields property='Phone Number' val={val.phonenumber} />
                                         <Datafields property='Date of Birth' val={val.DOB} />
                                         <Datafields property='Category' val={val.category} />
                                         <Datafields property='SSC Board' val={val.sscBoard} />
