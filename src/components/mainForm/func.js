@@ -26,15 +26,14 @@ export const submitForm = (e, navigate, setLoad, obj) => {
         }
         let sr_no = snapshot.val();
         let updated_serial_no = sr_no + 1
-        
-        let today = new Date();
-        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+        let d = String(new Date());
 
         set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/sr_no`),
             updated_serial_no
         )
         set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/students/` + updated_serial_no),
-            { serial_no: updated_serial_no,date, ...obj }
+            { serial_no: updated_serial_no, submitdate: d, ...obj }
         )
             .then(() => {
                 setLoad(false)

@@ -45,6 +45,7 @@ function Adminpanel() {
             <div className='admin_panel_main_div'>
                 <Adminpanelfirstcol group={group} setGroup={setGroup} menu={menu} setMenu={setMenu} />
                 <div className='second_col'>
+                    <div style={{ fontSize: "15px", textAlign: 'center', padding: '10px', backgroundColor: 'black', color: 'white' }}>Developed and Designed by <a href='https://okasha-tanoli-portfolio.surge.sh/' target="__blank">Okasha Aijaz</a></div>
                     <div className='loader_div'>
                         <div className="loader"></div>
                     </div>
@@ -57,6 +58,11 @@ function Adminpanel() {
             <div className='admin_panel_main_div'>
                 <Adminpanelfirstcol group={group} setGroup={setGroup} menu={menu} setMenu={setMenu} />
                 <div className='second_col'>
+                    <div style={{ fontSize: "15px", textAlign: 'center', padding: '10px', backgroundColor: 'black', color: 'white' }}>Developed and Designed by <a href='https://okasha-tanoli-portfolio.surge.sh/' target="__blank">Okasha Aijaz</a></div>
+                    <div className='respondsive_menu'>
+                        <HiMenuAlt1 size={30} onClick={() => { setMenu(true) }} />
+                        {/* <CSVLink className='csvLink csvLinkMenu' data={arrangeData()} headers={headers} filename={`${group}_students_data.csv`} ><SiMicrosoftexcel size={40} /></CSVLink> */}
+                    </div>
                     <div className='loader_div'>
                         <h1>No data Found</h1>
                     </div>
@@ -80,7 +86,7 @@ function Adminpanel() {
                 sscYear: val.sscYear,
                 dateOfBirth: val.DOB,
                 whatsapp: val.whatsapp,
-                phonenumber:val.phonenumber,
+                phonenumber: val.phonenumber,
                 address: val.address
             }
         })

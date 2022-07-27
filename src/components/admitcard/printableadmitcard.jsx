@@ -31,9 +31,9 @@ function PrintableAdmitcard({ data }) {
                         <p>Group :</p>
                         <p>{data.group}</p>
                     </div>
-                    <div className='userDataDiv '>
+                    <div className='userDataDiv'>
                         <p>Board :</p>
-                        <p>{data.sscBoard}</p>
+                        <p>Federal Board</p>
                     </div>
                 </div>
                 <div className='main_table_div'>
