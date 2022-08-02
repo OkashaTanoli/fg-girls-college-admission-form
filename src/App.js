@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className='BeforeTestDiv'>
-      <h1 className='BeforeTestDivHead'>FG BOYS INTER COLLEGE KARACHI CANTT</h1>
+      <h1 className='BeforeTestDivHead'>FG GIRLS INTER COLLEGE KARACHI CANTT</h1>
       <div className='BeforeTestDivCenter'>
         <h1>Admission Will Open On (4th August)</h1>
       </div>
