@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './mainForm.css'
 import { submitForm } from './func';
 import { useNavigate } from "react-router-dom";
 import '../admitcard/loader.css'
-
+import '../admitcard/loader.css'
+import { ref, onValue } from "firebase/database";
+import { db } from "../firebase/firebase";
+import '../../App.css'
 
 function MainForm() {
     let navigate = useNavigate();
@@ -24,6 +27,37 @@ function MainForm() {
     const [address, setAddress] = useState('')
 
     const [load, setLoad] = useState(false)
+    const [mainload, setMainload] = useState(true)
+    const [formActive, setFormActive] = useState(false)
+
+
+
+    useEffect(() => {
+        onValue(ref(db, `fg_girls_inter_college/federal_board/active`), (snapshot) => {
+            setFormActive(snapshot.val())
+            setMainload(false)
+        }, { onlyOnce: true })
+
+    }, [formActive])
+
+    if (mainload) {
+        return (
+            <div className='loader_div'>
+                <div className="loader"></div>
+            </div>
+        )
+    }
+
+    if (formActive) {
+        return (
+            <div className='BeforeTestDiv'>
+                <h1 className='BeforeTestDivHead'>FG GIRLS INTER COLLEGE KARACHI CANTT</h1>
+                <div className='BeforeTestDivCenter'>
+                    <h1>Admission Will Open On (4th August)</h1>
+                </div>
+            </div>
+        )
+    }
 
 
 
@@ -38,7 +72,7 @@ function MainForm() {
 
             <h3>Online Registration Form For Admission ( Only For Federal Board 2022-2023 )</h3>
 
-            <form onSubmit={(e) => submitForm(e, navigate, setLoad, { name, email, fathername, whatsapp,phonenumber, DOB, category, sscBoard, sscMarks, sscPercentage, sscYear, group, address })}>
+            <form onSubmit={(e) => submitForm(e, navigate, setLoad, { name, email, fathername, whatsapp, phonenumber, DOB, category, sscBoard, sscMarks, sscPercentage, sscYear, group, address })}>
                 <p className='note'>NOTE: Please fill all fields carefully</p>
                 {/* <!-- <div className="form-group"> --> */}
                 <label htmlFor="name">Name<span className="asteric">*</span></label>
@@ -147,7 +181,7 @@ function MainForm() {
                 <p className="thin">* These fields are required.</p>
             </form>
             <div style={{ fontSize: "16px", textAlign: 'center', padding: '10px 0', backgroundColor: '#798b01', color: 'white', width: '100%' }}>
-                <p><a href='https://okasha-tanoli-portfolio.surge.sh/' target="__blank" style={{marginRight:'5px',color:'white',textDecoration:'none'}}>OKASHA_TANOLI</a> copyright © 2022</p>
+                <p><a href='https://okasha-tanoli-portfolio.surge.sh/' target="__blank" style={{ marginRight: '5px', color: 'white', textDecoration: 'none' }}>OKASHA_TANOLI</a> copyright © 2022</p>
                 {/* <p>Designed by <a href='https://instagram.com/shehza.d' target="__blank">Shehzad Iqbal</a></p> */}
             </div>
 

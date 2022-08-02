@@ -1,16 +1,14 @@
-// import PagesRouter from './components/Router/router';
+import PagesRouter from './components/Router/router';
 import './App.css';
+import './components/admitcard/loader.css'
+
 
 function App() {
+
   
   return (
-    <div className='BeforeTestDiv'>
-      <h1 className='BeforeTestDivHead'>FG GIRLS INTER COLLEGE KARACHI CANTT</h1>
-      <div className='BeforeTestDivCenter'>
-        <h1>Admission Will Open On (4th August)</h1>
-      </div>
-    </div>
-    // <PagesRouter />
+    
+      <PagesRouter />
   );
 }
 
