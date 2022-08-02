@@ -48,7 +48,7 @@ function MainForm() {
         )
     }
 
-    if (formActive) {
+    if (!formActive) {
         return (
             <div className='BeforeTestDiv'>
                 <h1 className='BeforeTestDivHead'>FG GIRLS INTER COLLEGE KARACHI CANTT</h1>
