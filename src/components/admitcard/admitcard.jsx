@@ -12,7 +12,7 @@ function Admitcard() {
     const [load, setLoad] = useState(true)
     let { id } = useParams();
 
-    let group = (id > 0 && id <= 150) || id > 500 ? 'medical' : id > 150 && id <= 300 ? 'engineering' : id > 300 && id <= 400 ? 'ics' : id > 400 && id <= 500 ? 'arts' : ''
+    let group = (id > 0 && id <= 150) || (id > 500 && id <= 700) ? 'medical' : (id > 150 && id <= 300) || (id > 700 && id <= 900) ? 'engineering' : (id > 300 && id <= 400) || (id > 1000 && id <= 1100) ? 'ics' : (id > 400 && id <= 450) || (id > 900 && id <= 1000) ? 'arts' : ''
 
     useEffect(() => {
         onValue(ref(db, `fg_girls_inter_college/federal_board/${group}/students/${id}`), (snapshot) => {

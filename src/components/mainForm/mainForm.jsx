@@ -128,7 +128,7 @@ function MainForm() {
                     <option value="Federal Board">Federal Board</option>
                     <option value="O Level">O/A Levels</option>
                     <option value="Aga Khan">Aga Khan Board</option>
-                    <option value="Sindh Board">Sindh Board</option>
+                    {/* <option value="Sindh Board">Sindh Board</option> */}
                 </select>
 
 
