@@ -7,8 +7,21 @@ export const submitForm = (e, navigate, setLoad, obj) => {
     setLoad(true)
     onValue(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/sr_no`), (snapshot) => {
         if (obj.group === 'medical' && snapshot.val() === 150) {
-            alert("Seats are full for Medical")
+
+            const d = String(new Date());
+            set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/sr_no`),
+                501
+            )
+            set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/students/` + '501'),
+                { serial_no: 501, submitdate: d, ...obj }
+            )
+                .then(() => {
+                    setLoad(false)
+                    // let path = updated_serial_no;
+                    navigate(`admitcard/501`, { replace: true });
+                })
             return;
+
         }
 
         else if (obj.group === 'eng' && snapshot.val() === 300) {
