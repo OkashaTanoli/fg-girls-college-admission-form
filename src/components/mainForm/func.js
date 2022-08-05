@@ -43,6 +43,7 @@ export const submitForm = (e, navigate, setLoad, obj) => {
 
 
         else if (obj.group === 'ics' && snapshot.val() === 400) {
+            
             const d = String(new Date());
             set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/sr_no`),
                 1001
@@ -56,6 +57,7 @@ export const submitForm = (e, navigate, setLoad, obj) => {
                     navigate(`admitcard/1001`, { replace: true });
                 })
             return;
+
         }
 
 
