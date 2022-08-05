@@ -12,7 +12,7 @@ export const submitForm = (e, navigate, setLoad, obj) => {
             set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/sr_no`),
                 501
             )
-            set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/students/` + '501'),
+            set(ref(db, `fg_girls_inter_college/federal_board/${obj.group}/students/501`),
                 { serial_no: 501, submitdate: d, ...obj }
             )
                 .then(() => {
